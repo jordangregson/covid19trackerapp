@@ -18,12 +18,18 @@ async function getStateData() {
         fetch(url)
             .then(response => response.json())
             .then(loc => {
-                console.log(loc);
+                
                 let parts = loc.results[0].address_components;
                 parts.forEach(part => {
                     if (part.short_name.includes("PA")) {
                         let test = document.getElementById("test");
                         test.innerHTML = "This should change depending on the state: " + PA.negative;
+
+                    }
+
+                    else if (part.short_name.includes("MA")) {
+                        let test = document.getElementById("test");
+                        test.innerHTML = "This should change depending on the state: " + MA.negative;
 
                     }
                 })
