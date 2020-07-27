@@ -1,6 +1,3 @@
-console.log(process.dotenv.api_key);
-
-
 const states_url = "https://covidtracking.com/api/states";
 
 async function getStateData() {
@@ -11,14 +8,12 @@ async function getStateData() {
     navigator.geolocation.getCurrentPosition(position => {
 
         //Using the Google Maps API to figure out the location 
-        
-        //THIS IS THE API KEY
-        let KEY = process.env.api_key;
+        let KEY = "AIzaSyD2q_T55NeS8o_xQbslx-9skVmJIykvWWE";
         const LAT = position.coords.latitude;
         const LON = position.coords.longitude;
         let url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${LAT},${LON}&key=${KEY}`;
 
-        console.log(process.dotenv.api_key);
+        
 
         fetch(url)
             .then(response => response.json())
@@ -55,14 +50,6 @@ async function getStateData() {
 
     });
     
-
-
-
-
-
-
-
-
     //Turning every states array value into an integer
     console.log(data);
     const PA = data[41];
@@ -81,4 +68,4 @@ async function getStateData() {
 
 
 
-//getStateData();
+getStateData();
