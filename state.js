@@ -27,11 +27,6 @@ async function getStateData() {
 
                     }
 
-                    else if (part.short_name.includes("MA")) {
-                        let test = document.getElementById("test");
-                        test.innerHTML = "This should change depending on the state: " + MA.negative;
-
-                    }
                 })
 
             })
