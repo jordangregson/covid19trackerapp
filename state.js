@@ -13,12 +13,12 @@ async function getStateData() {
         const LON = position.coords.longitude;
         let url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${LAT},${LON}&key=${KEY}`;
 
-        
+
 
         fetch(url)
             .then(response => response.json())
             .then(loc => {
-                
+
                 let parts = loc.results[0].address_components;
                 parts.forEach(part => {
                     if (part.short_name.includes("PA")) {
@@ -36,7 +36,7 @@ async function getStateData() {
 
             })
 
-/*        fetch(url)
+        fetch(url)
             .then(response => response.json())
             .then(loc => {
                 let parts = loc.results[0].address_components;
@@ -51,10 +51,10 @@ async function getStateData() {
                 });
 
             })
-            */
+
 
     });
-    
+
     //Turning every states array value into an integer
     console.log(data);
     const PA = data[41];
