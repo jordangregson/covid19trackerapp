@@ -1,6 +1,6 @@
-const states_url = "https://covidtracking.com/api/states";
+console.log(process.dotenv.api_key);
 
-
+/*const states_url = "https://covidtracking.com/api/states";
 
 async function getStateData() {
     const response = await fetch(states_url);
@@ -8,13 +8,16 @@ async function getStateData() {
 
     //Finding the current location as longitude and latitude
     navigator.geolocation.getCurrentPosition(position => {
-    
+
         //Using the Google Maps API to figure out the location 
-        const KEY = "AIzaSyDw5TFcEcRJw3Lh9Kc8U9vBfi21ZquZkpc";
+        let KEY = process.env.api_key;
         const LAT = position.coords.latitude;
         const LON = position.coords.longitude;
         let url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${LAT},${LON}&key=${KEY}`;
-    
+
+        console.log(process.dotenv.api_key);
+
+        /*
         fetch(url)
             .then(response => response.json())
             .then(loc => {
@@ -23,31 +26,58 @@ async function getStateData() {
                 parts.forEach(part => {
                     if (part.short_name.includes("PA")) {
                         let test = document.getElementById("test");
-                        test.innerHTML = PA.negative;
-                            
+                        test.innerHTML = "This should change depending on the state: " + PA.negative;
+
                     }
                 })
-                
+
             })
             .catch(err => console.warn(err.message));
+
+        fetch(url)
+            .then(response => response.json())
+            .then(loc => {
+                let parts = loc.results[0].address_components;
+                parts.forEach(part => {
+                    if (part.types.includes("administrative_area_level_1")) {
+                        document.body.insertAdjacentHTML(
+                            "beforeend",
+                            `<p>State: ${part.short_name}</p>`
+                        );
+
+                    }
+                });
+
+            })
+            .catch(err => console.warn(err.message));
+
     });
+    
+
+
+
+
 
 
 
 
     //Turning every states array value into an integer
+    console.log(data);
     const PA = data[41];
+    const MA = data[21];
 
 
 
+    let maNegative = document.getElementById("ma-negative");
+    maNegative.innerHTML = "MA negative: " + MA.negative;
 
-
-    let stateDeaths = document.getElementById("state-deaths");
-    stateDeaths.innerHTML = "Results were negative: " + PA.negative;
+    let paNegative = document.getElementById("pa-negative");
+    paNegative.innerHTML = "PA negative: " + PA.negative;
 
 
 }
 
 
 
-getStateData();
+//getStateData();
+*/

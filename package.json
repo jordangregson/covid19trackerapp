@@ -1,0 +1,23 @@
+{
+  "name": "covid19trackerapp",
+  "version": "1.0.0",
+  "description": "The webpage is being tested here: https://jordangregson.github.io/covid19trackerapp/",
+  "main": "state.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jordangregson/covid19trackerapp.git"
+  },
+  "keywords": [],
+  "author": "Jordan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jordangregson/covid19trackerapp/issues"
+  },
+  "homepage": "https://github.com/jordangregson/covid19trackerapp#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  }
+}
