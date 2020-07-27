@@ -27,14 +27,19 @@ async function getStateData() {
 
                     }
 
+                    else if (part.short_name.includes("MA")) {
+                        let test = document.getElementById("test");
+                        test.innerHTML = "This should change depending on the state: " + MA.negative;
+
+                    }
                 })
 
             })
 
         fetch(url)
             .then(response => response.json())
-            .then(loc => {
-                let parts = loc.results[0].address_components;
+            .then(loca => {
+                let parts = loca.results[0].address_components;
                 parts.forEach(part => {
                     if (part.types.includes("administrative_area_level_1")) {
                         document.body.insertAdjacentHTML(
