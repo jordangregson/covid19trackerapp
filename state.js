@@ -35,7 +35,6 @@ async function getStateData() {
                 })
 
             })
-            .catch(err => console.warn(err.message));
 
         fetch(url)
             .then(response => response.json())
@@ -52,7 +51,7 @@ async function getStateData() {
                 });
 
             })
-            .catch(err => console.warn(err.message));
+            
 
     });
     
