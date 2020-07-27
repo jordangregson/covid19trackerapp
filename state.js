@@ -39,6 +39,7 @@ async function getStateData() {
         fetch(url)
             .then(response => response.json())
             .then(loc => {
+                
                 let parts = loc.results[0].address_components;
                 parts.forEach(part => {
                     if (part.types.includes("administrative_area_level_1")) {
