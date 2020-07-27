@@ -36,7 +36,7 @@ async function getStateData() {
 
             })
 
-        fetch(url)
+/*        fetch(url)
             .then(response => response.json())
             .then(loc => {
                 let parts = loc.results[0].address_components;
@@ -51,7 +51,7 @@ async function getStateData() {
                 });
 
             })
-            
+            */
 
     });
     
