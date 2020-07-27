@@ -38,8 +38,8 @@ async function getStateData() {
 
         fetch(url)
             .then(response => response.json())
-            .then(loca => {
-                let parts = loca.results[0].address_components;
+            .then(loc => {
+                let parts = loc.results[0].address_components;
                 parts.forEach(part => {
                     if (part.types.includes("administrative_area_level_1")) {
                         document.body.insertAdjacentHTML(
