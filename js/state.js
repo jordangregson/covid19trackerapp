@@ -1,16 +1,36 @@
 const states_url = "https://covidtracking.com/api/states";
 
-if(navigator.geolocation)
+//Finding the current location as longitude and latitude
+navigator.geolocation.getCurrentPosition(position => {
+    console.log(position.coords.latitude);
+    console.log(position.coords.longitude);
 
-navigator.geolocation.getCurrentPosition(function(position){
-    console.log(position);
-    $.get( "http://maps.googleapis.com/maps/api/geocode/json?1at1ng=" + position.coords.latitude + " ," + position.coords.longitude + "&sensor=false", function(data){
-        console.log(data);
-    })
-})
 
-else 
-    console.log("this isnt working");
+    //Using the Google Maps API to figure out the location
+    const KEY = "AIzaSyDw5TFcEcRJw3Lh9Kc8U9vBfi21ZquZkpc";
+    const LAT = position.coords.latitude;
+    const LON = position.coords.longitude;
+    let url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${LAT},${LON}&key=${KEY}`;
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            let parts = data.results[0].address_components;
+            parts.forEach(part => {
+                if (part.types.includes("administrative_area_level_1")) {
+                    document.body.insertAdjacentHTML(
+                        'beforeend',
+                        `<p>State: ${part.short_name}</p>`)
+                }
+            });
+        })
+        .catch(err => console.warn(err.message));
+});
+
+
+
+
 async function getStateData() {
     const response = await fetch(states_url);
     const data = await response.json();
@@ -25,10 +45,12 @@ async function getStateData() {
 
 
 
+
+
     let stateDeaths = document.getElementById("state-deaths");
     stateDeaths.innerHTML = "Results were negative: " + PA.negative;
 
-    
+
 }
 
 
