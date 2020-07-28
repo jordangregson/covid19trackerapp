@@ -8,70 +8,77 @@ async function getStateData() {
     navigator.geolocation.getCurrentPosition(position => {
 
         //Using the Google Maps API to figure out the location 
-        let KEY = "AIzaSyCl4N76fiBptIIO232Lx-JNyMEWPY--Qlg";
-        const LAT = position.coords.latitude;
-        const LON = position.coords.longitude;
-        let url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${LAT},${LON}&key=${KEY}`;
+        infoWindow = new google.maps.InfoWindow();
+
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                position => {
+                    const pos = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    };
+                }
+            
+        
+
+                    fetch(url)
+                        .then(response => response.json())
+                        .then(loc => {
+                            console.log(loc);
+                            let parts = loc.results[0].address_components;
+                            parts.forEach(part => {
+                                if (part.short_name.includes("PA")) {
+                                    let test = document.getElementById("test");
+                                    test.innerHTML = "This should change depending on the state: " + PA.negative;
+
+                                }
+
+                                else if (part.short_name.includes("MA")) {
+                                    let test = document.getElementById("test");
+                                    test.innerHTML = "This should change depending on the state: " + MA.negative;
+
+                                }
+                            })
+
+                        })
+
+                    fetch(url)
+                        .then(response => response.json())
+                        .then(loc => {
+
+                            let parts = loc.results[0].address_components;
+                            parts.forEach(part => {
+                                if (part.types.includes("administrative_area_level_1")) {
+                                    document.body.insertAdjacentHTML(
+                                        "beforeend",
+                                        `<p>State: ${part.short_name}</p>`
+                                    );
+
+                                }
+                            });
+
+                        })
 
 
-
-        fetch(url)
-            .then(response => response.json())
-            .then(loc => {
-
-                let parts = loc.results[0].address_components;
-                parts.forEach(part => {
-                    if (part.short_name.includes("PA")) {
-                        let test = document.getElementById("test");
-                        test.innerHTML = "This should change depending on the state: " + PA.negative;
-
-                    }
-
-                    else if (part.short_name.includes("MA")) {
-                        let test = document.getElementById("test");
-                        test.innerHTML = "This should change depending on the state: " + MA.negative;
-
-                    }
-                })
-
-            })
-
-        fetch(url)
-            .then(response => response.json())
-            .then(loc => {
-                
-                let parts = loc.results[0].address_components;
-                parts.forEach(part => {
-                    if (part.types.includes("administrative_area_level_1")) {
-                        document.body.insertAdjacentHTML(
-                            "beforeend",
-                            `<p>State: ${part.short_name}</p>`
-                        );
-
-                    }
                 });
 
-            })
-
-
-    });
-
-    //Turning every states array value into an integer
-    console.log(data);
-    const PA = data[41];
-    const MA = data[21];
+            //Turning every states array value into an integer
+            console.log(data);
+            const PA = data[41];
+            const MA = data[21];
 
 
 
-    let maNegative = document.getElementById("ma-negative");
-    maNegative.innerHTML = "MA negative: " + MA.negative;
+            let maNegative = document.getElementById("ma-negative");
+            maNegative.innerHTML = "MA negative: " + MA.negative;
 
-    let paNegative = document.getElementById("pa-negative");
-    paNegative.innerHTML = "PA negative: " + PA.negative;
-
-
-}
+            let paNegative = document.getElementById("pa-negative");
+            paNegative.innerHTML = "PA negative: " + PA.negative;
 
 
+        }
 
-getStateData();
+
+
+        getStateData();
