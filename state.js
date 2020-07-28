@@ -8,7 +8,7 @@ async function getStateData() {
     navigator.geolocation.getCurrentPosition(position => {
 
         //Using the Google Maps API to figure out the location 
-        let KEY = "AIzaSyD2q_T55NeS8o_xQbslx-9skVmJIykvWWE";
+        let KEY = "AIzaSyCl4N76fiBptIIO232Lx-JNyMEWPY--Qlg";
         const LAT = position.coords.latitude;
         const LON = position.coords.longitude;
         let url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${LAT},${LON}&key=${KEY}`;
