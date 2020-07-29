@@ -50,11 +50,6 @@ a {
     
 }
 
-.us {
-    background-color: #93D1FF;
-    ;
-}
-
 .btn:hover {
     background-color: rgb(140, 182, 212);
 }
@@ -69,6 +64,11 @@ a {
     padding-top: 6vh;
 
     line-height: 12vh;
+}
+
+#stateName {
+    margin-top: -65px;
+    text-align: center;
 }
 
 @media (max-width: 900px) {
