@@ -8,7 +8,7 @@ async function getUSData() {
     const data = await response.json();
 
     const usTotalCases = document.getElementById("usTotalCases");
-    usTotalCases.innerHTML = "Total Cases in the U.S.: " + formatter.format(data[0].total);
+    usTotalCases.innerHTML = "Total Cases: " + formatter.format(data[0].total);
 
     const usPositive = document.getElementById("usPositive");
     usPositive.innerHTML = "Positive Results: " + formatter.format(data[0].positive);
