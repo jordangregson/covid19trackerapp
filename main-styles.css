@@ -14,10 +14,43 @@ a {
     background-color: #60BCFF;
 }
 
+#about-container {
+    padding-top: 10px;
+    padding-right: 20px;
+
+    margin-left: auto;
+    margin-right: 5%;
+    
+
+    width: 130px;
+    
+}
+
+#about:hover {
+    background-color: rgb(140, 182, 212);
+}
+
+#about {
+    display: grid;
+    
+    height: 40px;
+    
+
+    padding-right: 20px;
+    
+
+    text-align: right;
+
+    font-size: 4vh;
+
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
 #website-title {
     font-size: 7vh;
     text-align: center;
-    padding-top: 5px;
+    padding-top: 1px;
     font-weight: bold;
 }
 
@@ -61,7 +94,7 @@ a {
     margin-right: auto;
     width: 70%;
 
-    padding-top: 6vh;
+    padding-top: 4vh;
 
     line-height: 12vh;
 }
