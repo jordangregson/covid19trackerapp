@@ -65,7 +65,7 @@ a {
     line-height: 12vh;
 }
 
-@media (max-width: 445px) {
+@media (max-width: 900px) {
     #header-bck {
         width: auto;
         height: 25vh;

@@ -11,16 +11,16 @@ async function getUSData() {
     usTotalCases.innerHTML = "Total Cases: " + formatter.format(data[0].total);
 
     const usPositive = document.getElementById("usPositive");
-    usPositive.innerHTML = "Positive Results: " + formatter.format(data[0].positive);
+    usPositive.innerHTML = "Positive: " + formatter.format(data[0].positive);
 
     const usNegative = document.getElementById("usNegative");
-    usNegative.innerHTML = "Negative Results: " + formatter.format(data[0].negative);
+    usNegative.innerHTML = "Negative: " + formatter.format(data[0].negative);
 
     const usDeathTotal = document.getElementById("usDeathTotal");
     usDeathTotal.innerHTML = "Deaths: " + formatter.format(data[0].death);
 
     const usHospitalized = document.getElementById("usHospitalized");
-    usHospitalized.innerHTML = "Total Hospitalized: " + formatter.format(data[0].hospitalized);
+    usHospitalized.innerHTML = "Hospitalized: " + formatter.format(data[0].hospitalized);
     
     
 }
