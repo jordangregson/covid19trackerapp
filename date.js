@@ -10,31 +10,31 @@ var month;
 
 //Setting the number of the day throughout the week to the corresponding day
 
-if(numDayOfWeek == 1) {
+if(numDayOfWeek == 0) {
     dayOfWeek = "Sunday";
 }
 
-else if(numDayOfWeek == 2) {
+else if(numDayOfWeek == 1) {
     dayOfWeek = "Monday";
 }
 
-else if(numDayOfWeek == 3) {
+else if(numDayOfWeek == 2) {
     dayOfWeek = "Tuesday";
 }
 
-else if(numDayOfWeek == 4) {
+else if(numDayOfWeek == 3) {
     dayOfWeek = "Wednesday";
 }
 
-else if(numDayOfWeek == 5) {
+else if(numDayOfWeek == 4) {
     dayOfWeek = "Thursday";
 }
 
-else if(numDayOfWeek == 6) {
+else if(numDayOfWeek == 5) {
     dayOfWeek = "Friday";
 }
 
-else if(numDayOfWeek == 7) {
+else if(numDayOfWeek == 6) {
     dayOfWeek = "Saturday";
 }
 
