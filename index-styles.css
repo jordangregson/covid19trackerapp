@@ -109,8 +109,11 @@ a {
         margin-left: 30px;
         
         padding: 10px;
-    
+    }
+
+    .us {
         background-color: #93D1FF;
+        ;
     }
     
     #website-title {
