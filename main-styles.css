@@ -9,7 +9,7 @@ a {
 }
 
 #header-bck {
-    height: 40vh;
+    height: 50%;
     width: 100%;
     background-color: #60BCFF;
 }
@@ -41,7 +41,7 @@ a {
 
     text-align: right;
 
-    font-size: 4vh;
+    font-size: 20pt;
 
     border: 2px solid black;
     border-radius: 10px;
@@ -50,7 +50,7 @@ a {
 #website-title {
     font-size: 7vh;
     text-align: center;
-    padding-top: 1px;
+    padding-top: 1vh;
     font-weight: bold;
 }
 
@@ -107,7 +107,7 @@ a {
 @media (max-width: 900px) {
     #header-bck {
         width: auto;
-        height: 25vh;
+        height: 50%;
         background-color: #60BCFF;
         margin-left: auto;
         margin-right: auto;
